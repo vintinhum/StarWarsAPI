@@ -1,0 +1,13 @@
+//
+//  APIManager.swift
+//  RequestAPI
+//
+//  Created by Vitor Barrios Luis De Albuquerque  on 13/12/21.
+//
+
+import Foundation
+import Alamofire
+
+enum APIManager: URLRequestConvertible {
+    static let endpoint = URL(str
+}
