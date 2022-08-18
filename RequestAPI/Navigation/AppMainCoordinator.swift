@@ -29,39 +29,61 @@ class AppMainCoordinator: Coordinator {
         navigationController?.pushViewController(viewController, animated: false)
     }
     
-    func presentCharacterDetail(requestType: RequestType, characterNumber: Int) {
-        let viewController = factory.makeCharacterDetailViewController(requestType: requestType, characterNumber: characterNumber)
+    func presentCharacterDetail(model: CharacterDetailModel) {
+        let viewController = factory.makeCharacterDetailViewController(model: model)
         viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func presentFilmList(requestType: RequestType, characterNumber: Int) {
-        let viewController = factory.makeFilmListViewController(requestType: requestType, characterNumber: characterNumber)
+    func presentCharacterList() {
+        let viewController = factory.makeCharacterListViewController()
+        viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func presentStarshipList(requestType: RequestType, characterNumber: Int) {
-        let viewController = factory.makeStarshipListViewController(requestType: requestType, characterNumber: characterNumber)
+    func presentFilmList(model: FilmListModel) {
+        let viewController = factory.makeFilmListViewController(model: model)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func presentStarshipList(model: StarshipListModel) {
+        let viewController = factory.makeStarshipListViewController(model: model)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
-// MARK: - CHARACTER SELECTION VIEWCONTROLLER DELEGATE
+// MARK: - CharacterSelectionViewControllerDelegate
 
 extension AppMainCoordinator: CharacterSelectionViewControllerDelegate {
-    func showCharacterDetail(requestType: RequestType, characterNumber: Int) {
-        presentCharacterDetail(requestType: requestType, characterNumber: characterNumber)
+    func showCharacterDetail(model: CharacterDetailModel) {
+        presentCharacterDetail(model: model)
+    }
+    
+    func showFullCharacterList() {
+        presentCharacterList()
     }
 }
 
-// MARK: - CHARACTER DETAIL VIEWCONTROLLER DELEGATE
+// MARK: - CharacterDetailViewControllerDelegate
 
-extension AppMainCoordinator: CharacterDetailCollectionViewControllerDelegate {
-    func showStarshipList(requestType: RequestType, characterNumber: Int) {
-        presentStarshipList(requestType: requestType, characterNumber: characterNumber)
+extension AppMainCoordinator: CharacterDetailViewControllerDelegate {
+    func showStarshipList(model: StarshipListModel) {
+        presentStarshipList(model: model)
     }
     
-    func showFilmList(requestType: RequestType, characterNumber: Int) {
-        presentFilmList(requestType: requestType, characterNumber: characterNumber)
+    func showFilmList(model: FilmListModel) {
+        presentFilmList(model: model)
+    }
+}
+
+// MARK: - CharacterListViewControllerDelegate
+
+extension AppMainCoordinator: CharacterListViewControllerDelegate {
+    func goToStarshipList(model: StarshipListModel) {
+        presentStarshipList(model: model)
+    }
+    
+    func goToFilmList(model: FilmListModel) {
+        presentFilmList(model: model)
     }
 }

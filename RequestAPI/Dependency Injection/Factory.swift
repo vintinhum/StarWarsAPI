@@ -8,13 +8,6 @@
 import Foundation
 import Swinject
 
-protocol FactoryProtocol {
-    func makeCharacterSelectionViewController() -> CharacterSelectionViewController
-    func makeCharacterDetailViewController(requestType: RequestType, characterNumber: Int) -> CharacterDetailCollectionViewController
-    func makeFilmListViewController(requestType: RequestType, characterNumber: Int) -> FilmListTableViewController
-    func makeStarshipListViewController(requestType: RequestType, characterNumber: Int) -> StarshipListTableViewController
-}
-
 class Factory: FactoryProtocol {
     
     // MARK: - PROPERTIES
@@ -33,16 +26,20 @@ class Factory: FactoryProtocol {
         return resolver.resolveUnwrapping(CharacterSelectionViewController.self)
     }
     
-    public func makeCharacterDetailViewController(requestType: RequestType, characterNumber: Int) -> CharacterDetailCollectionViewController {
-        return resolver.resolveUnwrapping(CharacterDetailCollectionViewController.self, arguments: requestType, characterNumber)
+    public func makeCharacterDetailViewController(model: CharacterDetailModel) -> CharacterDetailViewControllerProtocol {
+        return resolver.resolveUnwrapping(CharacterDetailViewControllerProtocol.self, argument: model)
     }
     
-    func makeFilmListViewController(requestType: RequestType, characterNumber: Int) -> FilmListTableViewController {
-        return resolver.resolveUnwrapping(FilmListTableViewController.self, arguments: requestType, characterNumber)
+    public func makeCharacterListViewController() -> CharacterListViewControllerProtocol {
+        return resolver.resolveUnwrapping(CharacterListViewControllerProtocol.self)
     }
     
-    func makeStarshipListViewController(requestType: RequestType, characterNumber: Int) -> StarshipListTableViewController {
-        return resolver.resolveUnwrapping(StarshipListTableViewController.self, arguments: requestType, characterNumber)
+    func makeFilmListViewController(model: FilmListModel) -> FilmListViewControllerProtocol {
+        return resolver.resolveUnwrapping(FilmListViewControllerProtocol.self, argument: model)
+    }
+    
+    func makeStarshipListViewController(model: StarshipListModel) -> StarshipListViewControllerProtocol {
+        return resolver.resolveUnwrapping(StarshipListViewControllerProtocol.self, argument: model)
     }
     
 }

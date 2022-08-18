@@ -8,7 +8,10 @@
 import UIKit
 
 extension UILabel {
-    static func titleLabel(text: String = "", _ size: CGFloat = 22.0, textColor: UIColor = .black, numberOfLines: Int = 0) -> UILabel {
+    static func titleLabel(text: String = "",
+                           _ size: CGFloat = 22.0,
+                           textColor: UIColor = .black,
+                           numberOfLines: Int = 0) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
@@ -20,7 +23,10 @@ extension UILabel {
         return label
     }
     
-    static func regularLabel(text: String = "", _ size: CGFloat = 17.0, textColor: UIColor = .black, numberOfLines: Int = 0) -> UILabel {
+    static func regularLabel(text: String = "",
+                             _ size: CGFloat = 17.0,
+                             textColor: UIColor = .black,
+                             numberOfLines: Int = 0) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
@@ -28,6 +34,7 @@ extension UILabel {
         label.textColor = textColor
         label.numberOfLines = numberOfLines
         label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
         return label
     }
 }

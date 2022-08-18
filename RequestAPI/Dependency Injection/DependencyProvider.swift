@@ -13,7 +13,8 @@ public class DependencyProvider {
     public let assembler: Assembler
     
     public init() {
-        assembler = Assembler([MyAssembly()], container: container)
+        assembler = Assembler([MyAssembly()],
+                              container: container)
     }
     
     public func add(_ assemblies: [Assembly]) {
