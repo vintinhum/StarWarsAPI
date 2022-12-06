@@ -10,7 +10,6 @@ import Foundation
 protocol FactoryProtocol {
     func makeCharacterSelectionViewController() -> CharacterSelectionViewController
     func makeCharacterDetailViewController(model: CharacterDetailModel) -> CharacterDetailViewControllerProtocol
-    func makeCharacterListViewController() -> CharacterListViewControllerProtocol
     func makeFilmListViewController(model: FilmListModel) -> FilmListViewControllerProtocol
     func makeStarshipListViewController(model: StarshipListModel) -> StarshipListViewControllerProtocol
 }

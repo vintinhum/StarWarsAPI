@@ -11,7 +11,6 @@ import UIKit
 
 protocol CharacterSelectionViewDelegate: AnyObject {
     func request(with requestType: RequestType, for characterNumber: Int)
-    func showCharacterList()
 }
 
 class CharacterSelectionView: UIView {
@@ -62,17 +61,6 @@ class CharacterSelectionView: UIView {
         return button
     }()
     
-    private lazy var showFullListButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemGreen
-        button.setTitle("Show full list", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(showFullList), for: .touchUpInside)
-        return button
-    }()
-    
     private lazy var errorPopUpView: ErrorPopUpView = {
         let view = ErrorPopUpView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -109,7 +97,6 @@ class CharacterSelectionView: UIView {
         addSubview(characterNumberTextField)
         addSubview(urlSessionRequestButton)
         addSubview(alamofireRequestButton)
-        addSubview(showFullListButton)
     }
     
     private func setupConstraints() {
@@ -127,12 +114,7 @@ class CharacterSelectionView: UIView {
             alamofireRequestButton.topAnchor.constraint(equalTo: urlSessionRequestButton.bottomAnchor, constant: 24),
             alamofireRequestButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
             alamofireRequestButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
-            alamofireRequestButton.heightAnchor.constraint(equalToConstant: 48),
-            
-            showFullListButton.topAnchor.constraint(equalTo: alamofireRequestButton.bottomAnchor, constant: 24),
-            showFullListButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
-            showFullListButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
-            showFullListButton.heightAnchor.constraint(equalToConstant: 48)
+            alamofireRequestButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     
@@ -182,10 +164,6 @@ class CharacterSelectionView: UIView {
         isNumberValid(characterNumber) ?
         delegate?.request(with: .alamofire, for: characterNumber) :
         showErrorPopUp()
-    }
-    
-    @objc private func showFullList() {
-        delegate?.showCharacterList()
     }
 }
 

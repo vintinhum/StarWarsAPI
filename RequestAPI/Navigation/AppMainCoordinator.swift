@@ -35,12 +35,6 @@ class AppMainCoordinator: Coordinator {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func presentCharacterList() {
-        let viewController = factory.makeCharacterListViewController()
-        viewController.delegate = self
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
     func presentFilmList(model: FilmListModel) {
         let viewController = factory.makeFilmListViewController(model: model)
         navigationController?.pushViewController(viewController, animated: true)
@@ -58,10 +52,6 @@ extension AppMainCoordinator: CharacterSelectionViewControllerDelegate {
     func showCharacterDetail(model: CharacterDetailModel) {
         presentCharacterDetail(model: model)
     }
-    
-    func showFullCharacterList() {
-        presentCharacterList()
-    }
 }
 
 // MARK: - CharacterDetailViewControllerDelegate
@@ -72,18 +62,6 @@ extension AppMainCoordinator: CharacterDetailViewControllerDelegate {
     }
     
     func showFilmList(model: FilmListModel) {
-        presentFilmList(model: model)
-    }
-}
-
-// MARK: - CharacterListViewControllerDelegate
-
-extension AppMainCoordinator: CharacterListViewControllerDelegate {
-    func goToStarshipList(model: StarshipListModel) {
-        presentStarshipList(model: model)
-    }
-    
-    func goToFilmList(model: FilmListModel) {
         presentFilmList(model: model)
     }
 }

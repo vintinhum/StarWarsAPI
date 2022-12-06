@@ -30,10 +30,6 @@ class Factory: FactoryProtocol {
         return resolver.resolveUnwrapping(CharacterDetailViewControllerProtocol.self, argument: model)
     }
     
-    public func makeCharacterListViewController() -> CharacterListViewControllerProtocol {
-        return resolver.resolveUnwrapping(CharacterListViewControllerProtocol.self)
-    }
-    
     func makeFilmListViewController(model: FilmListModel) -> FilmListViewControllerProtocol {
         return resolver.resolveUnwrapping(FilmListViewControllerProtocol.self, argument: model)
     }

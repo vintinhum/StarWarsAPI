@@ -103,23 +103,6 @@ class MyAssembly: Assembly {
             return CharacterDetailViewController(viewModel: viewModel)
         }
         
-        // MARK: - CharacterListViewController
-        
-        container.register(CharacterListViewModelProtocol.self) { resolver in
-            let service = resolver.resolveUnwrapping(ServiceProtocol.self, name: "urlsession")
-            let fetchAllCharactersUseCase = resolver.resolveUnwrapping(FetchAllCharactersDataUseCaseProtocol.self, argument: service)
-            let fetchAllCharactersWithURLUseCase = resolver.resolveUnwrapping(FetchAllCharactersDataWithURLUseCaseProtocol.self, argument: service)
-            let fetchHomeworldDataUseCase = resolver.resolveUnwrapping(FetchHomeworldWithURLSessionUseCaseProtocol.self, argument: service)
-            return CharacterListViewModel(fetchAllCharactersUseCase: fetchAllCharactersUseCase,
-                                          fetchAllCharactersWithURLUseCase: fetchAllCharactersWithURLUseCase,
-                                          fetchHomeworldDataUseCase: fetchHomeworldDataUseCase)
-        }
-        
-        container.register(CharacterListViewControllerProtocol.self) { resolver in
-            let viewModel = resolver.resolveUnwrapping(CharacterListViewModelProtocol.self)
-            return CharacterListViewController(viewModel: viewModel)
-        }
-        
         // MARK: - StarshipListViewController
         
         container.register(StarshipListViewModelProtocol.self) { (resolver, model: StarshipListModel) in

@@ -18,12 +18,6 @@
 		5129492C28AA92A5009E5D2D /* FetchCharacterWithURLSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129492B28AA92A5009E5D2D /* FetchCharacterWithURLSessionUseCase.swift */; };
 		5129492E28AA92C6009E5D2D /* FetchCharacterWithURLSessionUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129492D28AA92C6009E5D2D /* FetchCharacterWithURLSessionUseCaseProtocol.swift */; };
 		5129493028AA93EA009E5D2D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129492F28AA93EA009E5D2D /* Film.swift */; };
-		5129493528AAAB10009E5D2D /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129493428AAAB10009E5D2D /* CharacterListViewController.swift */; };
-		5129493728AAAB1B009E5D2D /* CharacterListViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129493628AAAB1B009E5D2D /* CharacterListViewControllerProtocol.swift */; };
-		5129493928AAAB23009E5D2D /* CharacterListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129493828AAAB23009E5D2D /* CharacterListViewControllerDelegate.swift */; };
-		5129493B28AAAB30009E5D2D /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129493A28AAAB30009E5D2D /* CharacterListViewModel.swift */; };
-		5129493D28AAAB3B009E5D2D /* CharacterListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129493C28AAAB3B009E5D2D /* CharacterListViewModelProtocol.swift */; };
-		5129493F28AAB6B2009E5D2D /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129493E28AAB6B2009E5D2D /* CharacterListModel.swift */; };
 		5129494228AABA8D009E5D2D /* FetchAllCharactersDataUseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129494128AABA8D009E5D2D /* FetchAllCharactersDataUseCaseError.swift */; };
 		5129494428AABBA1009E5D2D /* FetchAllCharactersDataUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129494328AABBA1009E5D2D /* FetchAllCharactersDataUseCaseProtocol.swift */; };
 		5129494628AABC65009E5D2D /* CharacterListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5129494528AABC65009E5D2D /* CharacterListRequestModel.swift */; };
@@ -103,12 +97,6 @@
 		5129492B28AA92A5009E5D2D /* FetchCharacterWithURLSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCharacterWithURLSessionUseCase.swift; sourceTree = "<group>"; };
 		5129492D28AA92C6009E5D2D /* FetchCharacterWithURLSessionUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCharacterWithURLSessionUseCaseProtocol.swift; sourceTree = "<group>"; };
 		5129492F28AA93EA009E5D2D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
-		5129493428AAAB10009E5D2D /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
-		5129493628AAAB1B009E5D2D /* CharacterListViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewControllerProtocol.swift; sourceTree = "<group>"; };
-		5129493828AAAB23009E5D2D /* CharacterListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewControllerDelegate.swift; sourceTree = "<group>"; };
-		5129493A28AAAB30009E5D2D /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
-		5129493C28AAAB3B009E5D2D /* CharacterListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelProtocol.swift; sourceTree = "<group>"; };
-		5129493E28AAB6B2009E5D2D /* CharacterListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListModel.swift; sourceTree = "<group>"; };
 		5129494128AABA8D009E5D2D /* FetchAllCharactersDataUseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllCharactersDataUseCaseError.swift; sourceTree = "<group>"; };
 		5129494328AABBA1009E5D2D /* FetchAllCharactersDataUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllCharactersDataUseCaseProtocol.swift; sourceTree = "<group>"; };
 		5129494528AABC65009E5D2D /* CharacterListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListRequestModel.swift; sourceTree = "<group>"; };
@@ -264,7 +252,6 @@
 			children = (
 				516A80DF2755621300928B34 /* CharacterSelection */,
 				516A80E027556DE500928B34 /* CharacterDetail */,
-				5129493128AAAAEA009E5D2D /* CharacterList */,
 				51C69ABC2758FF6D00D83C22 /* StarshipList */,
 				51C69ABB2758FF1700D83C22 /* FilmList */,
 			);
@@ -278,35 +265,6 @@
 				5129492D28AA92C6009E5D2D /* FetchCharacterWithURLSessionUseCaseProtocol.swift */,
 			);
 			path = FetchCaracterWithURLSession;
-			sourceTree = "<group>";
-		};
-		5129493128AAAAEA009E5D2D /* CharacterList */ = {
-			isa = PBXGroup;
-			children = (
-				5129493228AAAAF8009E5D2D /* Models */,
-				5129493328AAAAFE009E5D2D /* Views */,
-				5129493428AAAB10009E5D2D /* CharacterListViewController.swift */,
-				5129493628AAAB1B009E5D2D /* CharacterListViewControllerProtocol.swift */,
-				5129493828AAAB23009E5D2D /* CharacterListViewControllerDelegate.swift */,
-				5129493A28AAAB30009E5D2D /* CharacterListViewModel.swift */,
-				5129493C28AAAB3B009E5D2D /* CharacterListViewModelProtocol.swift */,
-			);
-			path = CharacterList;
-			sourceTree = "<group>";
-		};
-		5129493228AAAAF8009E5D2D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5129493E28AAB6B2009E5D2D /* CharacterListModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		5129493328AAAAFE009E5D2D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		5129494028AABA47009E5D2D /* FetchAllCharactersData */ = {
@@ -752,7 +710,6 @@
 				51B8F58F28A6D99800A1DABB /* CharacterDetailViewControllerProtocol.swift in Sources */,
 				5126760A28AA74C400D41CA2 /* StarshipListViewModelProtocol.swift in Sources */,
 				51404D1E2757E1C40044EA03 /* UILabel+Extensions.swift in Sources */,
-				5129493D28AAAB3B009E5D2D /* CharacterListViewModelProtocol.swift in Sources */,
 				513C79062768B53100D31CE8 /* Service.swift in Sources */,
 				5129493028AA93EA009E5D2D /* Film.swift in Sources */,
 				5146F86E2756687800588CC3 /* Character.swift in Sources */,
@@ -792,13 +749,11 @@
 				5129492428AA8A34009E5D2D /* RequestProtocol.swift in Sources */,
 				5129494428AABBA1009E5D2D /* FetchAllCharactersDataUseCaseProtocol.swift in Sources */,
 				512B8FFE275A84E500EDF3F4 /* FilmTableViewCell.swift in Sources */,
-				5129493B28AAAB30009E5D2D /* CharacterListViewModel.swift in Sources */,
 				5129494228AABA8D009E5D2D /* FetchAllCharactersDataUseCaseError.swift in Sources */,
 				513C793927691C7300D31CE8 /* FetchHomeworldWithURLSessionUseCase.swift in Sources */,
 				51AA5C43277103210087FE7D /* FetchFilmDataUseCaseError.swift in Sources */,
 				513C79582769356F00D31CE8 /* FetchStarshipListWithAlamofireUseCase.swift in Sources */,
 				5126760828AA747B00D41CA2 /* StarshipListViewControllerProtocol.swift in Sources */,
-				5129493928AAAB23009E5D2D /* CharacterListViewControllerDelegate.swift in Sources */,
 				513C791E2768E89C00D31CE8 /* ServiceProtocol.swift in Sources */,
 				513C795E2769383C00D31CE8 /* FetchFilmListWithAlamofireUseCase.swift in Sources */,
 				51B8F58928A6C7D600A1DABB /* CharacterRequestModel.swift in Sources */,
@@ -811,18 +766,15 @@
 				5126761A28AA839000D41CA2 /* Request.swift in Sources */,
 				5197018C28AAFB9C0012D52C /* CharacterListResponse.swift in Sources */,
 				51C69AAF2758F81700D83C22 /* Homeworld.swift in Sources */,
-				5129493728AAAB1B009E5D2D /* CharacterListViewControllerProtocol.swift in Sources */,
 				51404D26275814590044EA03 /* UIView+Extensions.swift in Sources */,
 				51404D1A2757ACD80044EA03 /* CharacterDetailViewModel.swift in Sources */,
 				51AA5C332770EB6A0087FE7D /* FetchCharacterDataUseCaseError.swift in Sources */,
 				51C69AC92759644D00D83C22 /* UIButton+Extensions.swift in Sources */,
-				5129493528AAAB10009E5D2D /* CharacterListViewController.swift in Sources */,
 				51B8F59428A6DA0800A1DABB /* CharacterDetailViewControllerDelegate.swift in Sources */,
 				513C792E276918F000D31CE8 /* FetchCharacterWithAlamofireUseCase.swift in Sources */,
 				5126760F28AA772500D41CA2 /* FilmListViewModelProtocol.swift in Sources */,
 				51AA5C46277104EE0087FE7D /* FetchStarshipDataUseCaseError.swift in Sources */,
 				516A80C027555B8800928B34 /* SceneDelegate.swift in Sources */,
-				5129493F28AAB6B2009E5D2D /* CharacterListModel.swift in Sources */,
 				51B8F59C28A6DB1400A1DABB /* FilmListModel.swift in Sources */,
 				5129492C28AA92A5009E5D2D /* FetchCharacterWithURLSessionUseCase.swift in Sources */,
 			);

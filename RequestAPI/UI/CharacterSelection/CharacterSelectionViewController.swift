@@ -11,7 +11,6 @@ import UIKit
 
 protocol CharacterSelectionViewControllerDelegate: AnyObject {
     func showCharacterDetail(model: CharacterDetailModel)
-    func showFullCharacterList()
 }
 
 class CharacterSelectionViewController: UIViewController {
@@ -87,10 +86,5 @@ extension CharacterSelectionViewController: CharacterSelectionViewDelegate {
         let model = CharacterDetailModel(requestType: requestType,
                                          characterNumber: characterNumber)
         delegate?.showCharacterDetail(model: model)
-    }
-    
-    func showCharacterList() {
-        
-        delegate?.showFullCharacterList()
     }
 }
